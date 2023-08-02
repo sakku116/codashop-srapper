@@ -11,7 +11,7 @@ class Main:
     def __init__(self):
         option = webdriver.ChromeOptions()
         option.add_argument('headless')
-        self.driver = webdriver.Chrome(service=webdriver.ChromeService("./chromedriver.exe"), options=option)
+        self.driver = webdriver.Chrome(service=webdriver.ChromeService("./chromedriver"), options=option)
         self.router = APIRouter()
         self.router.add_api_route("/get-username", self.get_username, methods=["GET"])
         self.router.add_event_handler("shutdown", self.shutdown_app)
